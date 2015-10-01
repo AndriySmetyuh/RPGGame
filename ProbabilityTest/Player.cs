@@ -1,18 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProbabilityTest
 {
+    /// <summary>
+    /// class of player
+    /// </summary>
     public class Player
     {
+        /// <summary>
+        /// player's level
+        /// </summary>
         public decimal Level { get; set; }
+        /// <summary>
+        /// player's health
+        /// </summary>
         public decimal Health { get; set; }
+        /// <summary>
+        /// player's power
+        /// </summary>
         public decimal Power { get; set; }
+        /// <summary>
+        /// player's precise
+        /// </summary>
         public decimal Precise { get; set; }
 
+        /// <summary>
+        /// constructor of player
+        /// </summary>
         public Player()
         {
             Level = 1;
