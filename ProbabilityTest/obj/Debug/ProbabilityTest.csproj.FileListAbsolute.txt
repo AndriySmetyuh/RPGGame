@@ -4,3 +4,11 @@ c:\users\user2\documents\visual studio 2013\Projects\ProbabilityTest\Probability
 c:\users\user2\documents\visual studio 2013\Projects\ProbabilityTest\ProbabilityTest\obj\Debug\ProbabilityTest.exe
 c:\users\user2\documents\visual studio 2013\Projects\ProbabilityTest\ProbabilityTest\obj\Debug\ProbabilityTest.pdb
 C:\Users\user2\Documents\Visual Studio 2013\Projects\ProbabilityTest\ProbabilityTest\obj\Debug\ProbabilityTest.csprojResolveAssemblyReference.cache
+C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\ProbabilityTest.exe.config
+C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\ProbabilityTest.exe
+C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\ProbabilityTest.pdb
+C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.csprojResolveAssemblyReference.cache
+C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.exe
+C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.pdb
+C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\log4net.dll
+C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\log4net.xml

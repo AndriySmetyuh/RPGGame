@@ -1,0 +1,7 @@
+From: pinergyserver@gmail.com 
+To: andr@v-lan.org.ua 
+Subject: Pinergy - Errors in Log Files 
+See attached for log file errors: 
+Error_Details,Filepath
+"2015-10-05 12:06:04,882 ERROR: This is a error message",C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\mylogfile.txt
+"2015-10-05 12:06:09,467 ERROR: This is a error message",C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\mylogfile.txt

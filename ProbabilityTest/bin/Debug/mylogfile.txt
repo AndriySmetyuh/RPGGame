@@ -1,0 +1,16 @@
+2015-10-05 12:04:36,791 DEBUG: This is a debug message
+2015-10-05 12:04:36,801 WARN: This is a warn message
+2015-10-05 12:04:36,801 ERROR: This is a error message
+2015-10-05 12:04:36,801 FATAL: This is a fatal message
+2015-10-05 12:04:38,185 DEBUG: This is a debug message
+2015-10-05 12:04:38,195 WARN: This is a warn message
+2015-10-05 12:04:38,195 ERROR: This is a error message
+2015-10-05 12:04:38,195 FATAL: This is a fatal message
+2015-10-05 12:06:04,872 DEBUG: This is a debug message
+2015-10-05 12:06:04,882 WARN: This is a warn message
+2015-10-05 12:06:04,882 ERROR: This is a error message
+2015-10-05 12:06:04,882 FATAL: This is a fatal message
+2015-10-05 12:06:09,457 DEBUG: This is a debug message
+2015-10-05 12:06:09,467 WARN: This is a warn message
+2015-10-05 12:06:09,467 ERROR: This is a error message
+2015-10-05 12:06:09,467 FATAL: This is a fatal message
