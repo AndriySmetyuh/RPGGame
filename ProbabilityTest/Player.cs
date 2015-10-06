@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace ProbabilityTest
 {
@@ -43,9 +44,19 @@ namespace ProbabilityTest
             do
             {
                 int res = rand.Next(1, 101);
-                if (push)
+
+                Console.WriteLine(push ? "You hit..." : "Enemy hits...");
+                Thread.Sleep(1500);
+
+                var prec = push ? Precise : enemy.Precise;
+
+                if (!CalculatePrecise(prec, res))
                 {
-                    if (CalculatePrecise(enemy.Precise, res))
+                    Console.WriteLine("Miss");
+                }
+                else
+                {
+                    if (push)
                     {
                         enemy.Health -= Power;
                         if (enemy.Health < 0) enemy.Health = 0;
@@ -54,20 +65,9 @@ namespace ProbabilityTest
                     }
                     else
                     {
-                        Console.WriteLine("You made push for {0} damage - miss", Power);
-                    }
-                }
-                else
-                {
-                    if (CalculatePrecise(Precise, res))
-                    {
                         Health -= enemy.Power;
                         if (Health < 0) Health = 0;
                         Console.WriteLine("You got push for {0} damage - your health now is {1}", enemy.Power, Health);
-                    }
-                    else
-                    {
-                        Console.WriteLine("You got push for {0} damage - miss", Power);
                     }
                 }
                 push = ! push;
