@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Threading;
 
 namespace ProbabilityTest
@@ -38,11 +39,28 @@ namespace ProbabilityTest
 
         public bool Fight(Enemy enemy)
         {
-            bool push = true;
+            bool push = false;
             Random rand = new Random();
+
+            int bottleHealth = Convert.ToInt32(ConfigurationManager.AppSettings["BottleHealth"]);
+            int bottlesCount = Convert.ToInt32(ConfigurationManager.AppSettings["BottlesCount"]);
 
             do
             {
+                push = !push;
+                if (push && bottlesCount > 0)
+                {
+                    Console.WriteLine("Do you want to drink bottle(+ {0} health)? You have {1} bottles. Press 1 if yes.", bottleHealth, bottlesCount);
+                    var desicion = Console.ReadLine();
+
+                    if (desicion == "1")
+                    {
+                        Console.WriteLine("Your health now is {0}", DrinkBottle(bottleHealth));
+                        bottlesCount--;
+                        continue;
+                    }
+                }
+
                 int res = rand.Next(1, 101);
 
                 Console.WriteLine(push ? "You hit..." : "Enemy hits...");
@@ -70,7 +88,6 @@ namespace ProbabilityTest
                         Console.WriteLine("You got push for {0} damage - your health now is {1}", enemy.Power, Health);
                     }
                 }
-                push = ! push;
 
             } while (Health > 0 && enemy.Health > 0);
             return Health > 0;
@@ -79,6 +96,12 @@ namespace ProbabilityTest
         public bool CalculatePrecise(decimal precise, int res)
         {
             return res <= precise;
+        }
+
+        public decimal DrinkBottle(int bottleHealth)
+        {
+            Health += bottleHealth;
+            return Health;
         }
     }
 }
