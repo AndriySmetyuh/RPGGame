@@ -25,6 +25,10 @@ namespace ProbabilityTest
         /// player's precise
         /// </summary>
         public decimal Precise { get; set; }
+        /// <summary>
+        /// bottles count
+        /// </summary>
+        public decimal Bottles { get; set; }
 
         /// <summary>
         /// constructor of player
@@ -35,6 +39,7 @@ namespace ProbabilityTest
             Health = 80;
             Power = 20;
             Precise = 35;
+            Bottles = Convert.ToInt32(ConfigurationManager.AppSettings["BottlesCount"]);
         }
 
         public bool Fight(Enemy enemy)
@@ -43,20 +48,19 @@ namespace ProbabilityTest
             Random rand = new Random();
 
             int bottleHealth = Convert.ToInt32(ConfigurationManager.AppSettings["BottleHealth"]);
-            int bottlesCount = Convert.ToInt32(ConfigurationManager.AppSettings["BottlesCount"]);
 
             do
             {
                 push = !push;
-                if (push && bottlesCount > 0)
+                if (push && Bottles > 0)
                 {
-                    Console.WriteLine("Do you want to drink bottle(+ {0} health)? You have {1} bottles. Press 1 if yes.", bottleHealth, bottlesCount);
+                    Console.WriteLine("Do you want to drink bottle(+ {0} health)? You have {1} bottles. Press 1 if yes.", bottleHealth, Bottles);
                     var desicion = Console.ReadLine();
 
                     if (desicion == "1")
                     {
                         Console.WriteLine("Your health now is {0}", DrinkBottle(bottleHealth));
-                        bottlesCount--;
+                        Bottles--;
                         continue;
                     }
                 }
@@ -93,15 +97,37 @@ namespace ProbabilityTest
             return Health > 0;
         }
 
+        /// <summary>
+        /// Calculate if event happenes
+        /// </summary>
+        /// <param name="precise">Probability of happening event</param>
+        /// <param name="res">Result of random</param>
+        /// <returns>If event occurs</returns>
         public bool CalculatePrecise(decimal precise, int res)
         {
             return res <= precise;
         }
 
+        /// <summary>
+        /// Simulating of drinling bottle
+        /// </summary>
+        /// <param name="bottleHealth">Health of bottle</param>
+        /// <returns>Player's health after drinking bottle</returns>
         public decimal DrinkBottle(int bottleHealth)
         {
             Health += bottleHealth;
             return Health;
+        }
+
+        /// <summary>
+        /// User gets new level
+        /// </summary>
+        public void GetNewLevel()
+        {
+            Level++;
+            Health += 5;
+            Precise += 8;
+            Bottles += 2;
         }
     }
 }
