@@ -73,7 +73,7 @@ namespace ProbabilityTest
                 var prec = push ? Precise : enemy.Precise;
                 var pow = push ? Power : enemy.Power;
 
-                var damage = (int) (pow*(res + 1 - prec)/(101 - prec));
+                var damage = Math.Ceiling(pow - pow*res/(prec + 1)); 
 
                 if (!CalculatePrecise(prec, res))
                 {
@@ -85,14 +85,14 @@ namespace ProbabilityTest
                     {
                         enemy.Health -= damage;
                         if (enemy.Health < 0) enemy.Health = 0;
-                        Console.WriteLine("You made push for {0} damage - enemy's health now is {1}", Power,
+                        Console.WriteLine("You made push for {0} damage - enemy's health now is {1}", damage,
                             enemy.Health);
                     }
                     else
                     {
                         Health -= damage;
                         if (Health < 0) Health = 0;
-                        Console.WriteLine("You got push for {0} damage - your health now is {1}", enemy.Power, Health);
+                        Console.WriteLine("You got push for {0} damage - your health now is {1}", damage, Health);
                     }
                 }
 
@@ -108,7 +108,7 @@ namespace ProbabilityTest
         /// <returns>If event occurs</returns>
         public bool CalculatePrecise(decimal precise, int res)
         {
-            return precise <= res;
+            return res <= precise;
         }
 
         /// <summary>
