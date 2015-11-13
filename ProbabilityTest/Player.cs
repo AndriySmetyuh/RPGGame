@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Threading;
+using ProbabilityTest.Helpers;
 
 namespace ProbabilityTest
 {
@@ -54,12 +55,12 @@ namespace ProbabilityTest
                 push = !push;
                 if (push && Bottles > 0)
                 {
-                    Console.WriteLine("Do you want to drink bottle(+ {0} health)? You have {1} bottles. Press 1 if yes.", bottleHealth, Bottles);
+                    MessageHelper.ShowMessage(string.Format("Do you want to drink bottle(+ {0} health)? You have {1} bottles. Press 1 if yes.", bottleHealth, Bottles));
                     var desicion = Console.ReadLine();
 
                     if (desicion == "1")
                     {
-                        Console.WriteLine("Your health now is {0}", DrinkBottle(bottleHealth));
+                        MessageHelper.ShowMessage(string.Format("Your health now is {0}", DrinkBottle(bottleHealth)));
                         Bottles--;
                         continue;
                     }
@@ -67,17 +68,17 @@ namespace ProbabilityTest
 
                 int res = rand.Next(1, 101);
 
-                Console.WriteLine(push ? "You hit..." : "Enemy hits...");
+                MessageHelper.ShowMessage(push ? "You hit..." : "Enemy hits...");
                 Thread.Sleep(1500);
 
                 var prec = push ? Precise : enemy.Precise;
                 var pow = push ? Power : enemy.Power;
 
-                var damage = Math.Ceiling(pow - pow*res/(prec + 1)); 
+                var damage = Math.Ceiling(pow - pow*(res - 1)/(prec + 1)); 
 
                 if (!CalculatePrecise(prec, res))
                 {
-                    Console.WriteLine("Miss");
+                    MessageHelper.ShowMessage("Miss");
                 }
                 else
                 {
@@ -85,14 +86,13 @@ namespace ProbabilityTest
                     {
                         enemy.Health -= damage;
                         if (enemy.Health < 0) enemy.Health = 0;
-                        Console.WriteLine("You made push for {0} damage - enemy's health now is {1}", damage,
-                            enemy.Health);
+                        MessageHelper.ShowMessage(string.Format("You made push for {0} damage - enemy's health now is {1}", damage, enemy.Health));
                     }
                     else
                     {
                         Health -= damage;
                         if (Health < 0) Health = 0;
-                        Console.WriteLine("You got push for {0} damage - your health now is {1}", damage, Health);
+                        MessageHelper.ShowMessage(string.Format("You got push for {0} damage - your health now is {1}", damage, Health));
                     }
                 }
 
@@ -131,6 +131,7 @@ namespace ProbabilityTest
             Health += 5;
             Precise += 8;
             Bottles += 2;
+            MessageHelper.ShowMessage(string.Format("You killed an enemy. You've got a level {0}", Level));
         }
     }
 }

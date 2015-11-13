@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using log4net;
+using ProbabilityTest.Helpers;
 
 namespace ProbabilityTest
 {
@@ -35,12 +36,12 @@ namespace ProbabilityTest
                 }
                 else
                 {
-                    Console.WriteLine("You are dead. Game over.");
+                    MessageHelper.ShowMessage("You are dead. Game over.");
                     return;
                 }
             }
 
-            Console.WriteLine("Congratulations!!! YOU WIN!!");
+            MessageHelper.ShowMessage("Congratulations!!! YOU WIN!!!");
         }
     }
 }
