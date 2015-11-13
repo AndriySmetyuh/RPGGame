@@ -45,7 +45,7 @@ namespace ProbabilityTest
         public bool Fight(Enemy enemy)
         {
             bool push = false;
-            Random rand = new Random();
+            var rand = new Random();
 
             int bottleHealth = Convert.ToInt32(ConfigurationManager.AppSettings["BottleHealth"]);
 
@@ -71,6 +71,9 @@ namespace ProbabilityTest
                 Thread.Sleep(1500);
 
                 var prec = push ? Precise : enemy.Precise;
+                var pow = push ? Power : enemy.Power;
+
+                var damage = (int) (pow*(res + 1 - prec)/(101 - prec));
 
                 if (!CalculatePrecise(prec, res))
                 {
@@ -80,14 +83,14 @@ namespace ProbabilityTest
                 {
                     if (push)
                     {
-                        enemy.Health -= Power;
+                        enemy.Health -= damage;
                         if (enemy.Health < 0) enemy.Health = 0;
                         Console.WriteLine("You made push for {0} damage - enemy's health now is {1}", Power,
                             enemy.Health);
                     }
                     else
                     {
-                        Health -= enemy.Power;
+                        Health -= damage;
                         if (Health < 0) Health = 0;
                         Console.WriteLine("You got push for {0} damage - your health now is {1}", enemy.Power, Health);
                     }
@@ -105,7 +108,7 @@ namespace ProbabilityTest
         /// <returns>If event occurs</returns>
         public bool CalculatePrecise(decimal precise, int res)
         {
-            return res <= precise;
+            return precise <= res;
         }
 
         /// <summary>
