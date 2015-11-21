@@ -1,4 +1,4 @@
-﻿namespace ProbabilityTest
+﻿namespace ProbabilityTest.Models
 {
     /// <summary>
     /// Troll enemy
@@ -13,6 +13,7 @@
             Health = 50;
             Power = 14;
             Precise = 28;
+            Name = "Troll";
         }
     }
 }
