@@ -47,10 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fight.cs" />
+    <Compile Include="Models\Bowman.cs" />
+    <Compile Include="Models\Elf.cs" />
     <Compile Include="Models\Enemy.cs" />
     <Compile Include="Helpers\MessageHelper.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Warrior.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Troll.cs" />

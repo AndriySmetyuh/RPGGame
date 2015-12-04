@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using log4net;
 using ProbabilityTest.Helpers;
 using ProbabilityTest.Models;
@@ -15,8 +16,39 @@ namespace ProbabilityTest
             log.Error("This is a error message");
             log.Fatal("This is a fatal message");
 
+            Player user = null;
+            bool valid = false;
+
+            do
+            {
+                MessageHelper.ShowMessage("Choose your player: 1 - elf; 2 - warrior; 3 - bowman");
+                string res = Console.ReadLine();
+
+                switch (res)
+                {
+                    case "1":
+                    {
+                        user = new Elf();
+                        valid = true;
+                        break;
+                    }
+                    case "2":
+                    {
+                        user = new Warrior();
+                        valid = true;
+                        break;
+                    }
+                    case "3":
+                    {
+                        user = new Bowman();
+                        valid = true;
+                        break;
+                    }
+                }
+
+            } while (!valid);
+
             Fight fight;
-            Player user = new Player();
 
             List<Enemy> enemies = new List<Enemy>();
 
