@@ -14,5 +14,14 @@ namespace ProbabilityTest.Models
             Name = "Bowman";
             Bottles = Convert.ToInt32(ConfigurationManager.AppSettings["BottlesCount"]);
         }
+
+        public override void GetNewLevel()
+        {
+            Health += 5;
+            Power += 3;
+            Precise += 8;
+            Bottles += 2;
+            base.GetNewLevel();
+        }
     }
 }

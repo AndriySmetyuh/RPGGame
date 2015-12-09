@@ -14,5 +14,14 @@ namespace ProbabilityTest.Models
             Name = "Elf";
             Bottles = Convert.ToInt32(ConfigurationManager.AppSettings["BottlesCount"]);
         }
+
+        public override void GetNewLevel()
+        {
+            Health += 7;
+            Power += 2;
+            Precise += 4;
+            Bottles += 2;
+            base.GetNewLevel();
+        }
     }
 }

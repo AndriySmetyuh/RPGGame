@@ -47,13 +47,9 @@ namespace ProbabilityTest.Models
         /// <summary>
         /// User gets new level
         /// </summary>
-        public void GetNewLevel()
+        public virtual void GetNewLevel()
         {
             Level++;
-            Health += 5;
-            Power += 4;
-            Precise += 8;
-            Bottles += 2;
             MessageHelper.ShowMessage(string.Format("You killed an enemy. You've got a level {0}", Level));
         }
 

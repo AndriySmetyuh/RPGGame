@@ -14,5 +14,14 @@ namespace ProbabilityTest.Models
             Name = "Warrior";
             Bottles = Convert.ToInt32(ConfigurationManager.AppSettings["BottlesCount"]);
         }
+
+        public override void GetNewLevel()
+        {
+            Health += 3;
+            Power += 6;
+            Precise += 5;
+            Bottles += 2;
+            base.GetNewLevel();
+        }
     }
 }
