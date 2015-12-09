@@ -61,7 +61,7 @@ namespace ProbabilityTest.Models
         {
             if (Bottles > 0)
             {
-                MessageHelper.ShowMessage(string.Format("If you want to drink a bottle, press 1. You have {0} bottles", Bottles));
+                MessageHelper.ShowMessage(string.Format("If you want to drink a bottle, press 1. You have {0} bottle{1}", Bottles, Bottles > 1 ? "s" : ""));
                 if(Console.ReadLine() == "1")
                 {
                     DrinkBottle(Convert.ToInt32(ConfigurationManager.AppSettings["BottleHealth"]));
