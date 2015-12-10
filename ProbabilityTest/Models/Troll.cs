@@ -13,6 +13,7 @@
             Health = 50;
             Power = 14;
             Precise = 28;
+            Exp = 200;
             Name = "Troll";
         }
     }

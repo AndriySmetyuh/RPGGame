@@ -7,12 +7,10 @@ namespace ProbabilityTest.Models
     {
         public Warrior()
         {
-            Level = 1;
             Health = 60;
             Power = 30;
             Precise = 30;
             Name = "Warrior";
-            Bottles = Convert.ToInt32(ConfigurationManager.AppSettings["BottlesCount"]);
         }
 
         public override void GetNewLevel()

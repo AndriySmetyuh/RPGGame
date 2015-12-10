@@ -19,6 +19,8 @@ namespace ProbabilityTest
             Player user = null;
             bool valid = false;
 
+            LevelExperience exp = new LevelExperience();
+
             do
             {
                 MessageHelper.ShowMessage("Choose your player: 1 - elf; 2 - warrior; 3 - bowman");
@@ -56,6 +58,12 @@ namespace ProbabilityTest
             {
                 Enemy tr = new Troll();
                 enemies.Add(tr);
+            } 
+            
+            for (int i = 0; i < 3; i++)
+            {
+                Enemy tr = new Goblin();
+                enemies.Add(tr);
             }
 
             foreach (var enemy in enemies)
@@ -66,7 +74,12 @@ namespace ProbabilityTest
 
                 if (res == user)
                 {
-                    user.GetNewLevel();
+                    user.Exp += enemy.Exp;
+
+                    if (exp.GotLevel(user.Level, user.Exp))
+                    {
+                        user.GetNewLevel();
+                    }
                 }
                 else
                 {

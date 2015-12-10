@@ -5,6 +5,9 @@
     /// </summary>
     public class Enemy : Person
     {
-
+        /// <summary>
+        /// experience count
+        /// </summary>
+        public uint Exp { get; set; }
     }
 }

@@ -7,23 +7,27 @@ namespace ProbabilityTest.Models
     public class Person
     {
         public decimal Health { get; set; }
-        public decimal Power { get; set; }
+        public uint Power { get; set; }
         public string Name { get; set; }
 
-        public decimal Precise
+        public uint Precise
         {
             get { return _mPrecise; }
             set { _mPrecise = value > 100 ? 100 : value; }
         }
 
-        private decimal _mPrecise;
+        private uint _mPrecise;
 
+        /// <summary>
+        /// Simulate one hit to opponent
+        /// </summary>
+        /// <param name="opponent">your enemy</param>
         public virtual void Hit(Person opponent)
         {
             var rand = new Random();
             int res = rand.Next(1, 101);
 
-            var damage = Math.Ceiling(Power - Power * (res - 1) / (Precise + 1));
+            var damage = (decimal)Math.Ceiling((double)(Power - Power * (res - 1) / (Precise + 1)));
 
             MessageHelper.ShowMessage(string.Format("{0} hits...", Name));
             Thread.Sleep(1500);
@@ -50,7 +54,7 @@ namespace ProbabilityTest.Models
         /// <param name="precise">Probability of happening event</param>
         /// <param name="res">Result of random</param>
         /// <returns>If event occurs</returns>
-        public bool CalculatePrecise(decimal precise, int res)
+        public bool CalculatePrecise(uint precise, int res)
         {
             return res <= precise;
         }

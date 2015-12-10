@@ -12,11 +12,15 @@ namespace ProbabilityTest.Models
         /// <summary>
         /// player's level
         /// </summary>
-        public decimal Level { get; set; }
+        public uint Level { get; set; }
         /// <summary>
         /// bottles count
         /// </summary>
-        public decimal Bottles { get; set; }
+        public uint Bottles { get; set; }
+        /// <summary>
+        /// experience count
+        /// </summary>
+        public uint Exp { get; set; }
 
         /// <summary>
         /// constructor of player
@@ -24,11 +28,8 @@ namespace ProbabilityTest.Models
         public Player()
         {
             Level = 1;
-            Health = 80;
-            Power = 20;
-            Precise = 35;
-            Name = "Player";
-            Bottles = Convert.ToInt32(ConfigurationManager.AppSettings["BottlesCount"]);
+            Exp = 0;
+            Bottles = Convert.ToUInt32(ConfigurationManager.AppSettings["BottlesCount"]);
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace ProbabilityTest.Models
         /// </summary>
         /// <param name="bottleHealth">Health of bottle</param>
         /// <returns>Player's health after drinking bottle</returns>
-        public decimal DrinkBottle(int bottleHealth)
+        public decimal DrinkBottle(uint bottleHealth)
         {
             Health += bottleHealth;
             Bottles--;
@@ -53,6 +54,10 @@ namespace ProbabilityTest.Models
             MessageHelper.ShowMessage(string.Format("You killed an enemy. You've got a level {0}", Level));
         }
 
+        /// <summary>
+        /// Simulate one hit to opponent
+        /// </summary>
+        /// <param name="opponent">your enemy</param>
         public override void Hit(Person opponent)
         {
             if (Bottles > 0)
@@ -60,7 +65,7 @@ namespace ProbabilityTest.Models
                 MessageHelper.ShowMessage(string.Format("If you want to drink a bottle, press 1. You have {0} bottle{1}", Bottles, Bottles > 1 ? "s" : ""));
                 if(Console.ReadLine() == "1")
                 {
-                    DrinkBottle(Convert.ToInt32(ConfigurationManager.AppSettings["BottleHealth"]));
+                    DrinkBottle(Convert.ToUInt32(ConfigurationManager.AppSettings["BottleHealth"]));
                     return;
                 }
             }
