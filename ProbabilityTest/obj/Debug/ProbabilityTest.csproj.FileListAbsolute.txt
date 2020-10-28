@@ -12,3 +12,13 @@ C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\obj
 C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.pdb
 C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\log4net.dll
 C:\Users\user2\Documents\Visual Studio 2013\Projects\RPGGame\ProbabilityTest\bin\Debug\log4net.xml
+C:\Apps\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.csprojAssemblyReference.cache
+C:\Apps\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.csproj.CoreCompileInputs.cache
+C:\Apps\RPGGame\ProbabilityTest\bin\Debug\ProbabilityTest.exe.config
+C:\Apps\RPGGame\ProbabilityTest\bin\Debug\ProbabilityTest.exe
+C:\Apps\RPGGame\ProbabilityTest\bin\Debug\ProbabilityTest.pdb
+C:\Apps\RPGGame\ProbabilityTest\bin\Debug\log4net.dll
+C:\Apps\RPGGame\ProbabilityTest\bin\Debug\log4net.xml
+C:\Apps\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.csproj.CopyComplete
+C:\Apps\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.exe
+C:\Apps\RPGGame\ProbabilityTest\obj\Debug\ProbabilityTest.pdb

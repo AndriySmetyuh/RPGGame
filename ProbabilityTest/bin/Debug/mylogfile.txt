@@ -18,3 +18,7 @@
 2015-11-21 10:38:26,289 WARN: This is a warn message
 2015-11-21 10:38:26,562 ERROR: This is a error message
 2015-11-21 10:38:26,930 FATAL: This is a fatal message
+2020-10-28 19:04:39,810 DEBUG: This is a debug message
+2020-10-28 19:04:39,824 WARN: This is a warn message
+2020-10-28 19:04:39,825 ERROR: This is a error message
+2020-10-28 19:04:39,825 FATAL: This is a fatal message
